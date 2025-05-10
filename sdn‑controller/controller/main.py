@@ -26,7 +26,9 @@ class SDNController:
     def remove_link(self, u, v):          self.topo.remove_link(u, v)
     def inject_flow(self,*a,**kw):        return self.policies.install_flow(*a, **kw)
     def fail_link(self, u, v):            self.topo.fail_link(u, v); self.policies.recompute_all()
+    def restore_link(self, u, v):         self.topo.restore_link(u, v)
     def show(self):                       self.viz.draw()
+
 
 def main():
     p = argparse.ArgumentParser(description="Launch SDN controller CLI")
